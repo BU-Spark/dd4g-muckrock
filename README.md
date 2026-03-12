@@ -1,8 +1,8 @@
-FDA Medical Device Complaint & Recall Analysis
+                                            FDA Medical Device Complaint & Recall Analysis
 
-SPARK! Data Days for Good (DD4G) – Spring 2026
+                                            SPARK! Data Days for Good (DD4G) – Spring 2026
 
-MuckRock Data Liberation Project
+                                                   MuckRock Data Liberation Project
 
 Authors:
 Dang Dinh · Carol Kong · Mia Vargas · Parin Shaik · Astika Tyagi
