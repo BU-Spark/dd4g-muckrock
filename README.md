@@ -403,17 +403,7 @@ Client:
 Dillon Bergin
 Senior Investigative & Data Journalist
 ```
-Authors
 
-Dang Dinh
-
-Carol Kong
-
-Mia Vargas
-
-Parin Shaik
-
-Astika Tyagi
 
 Boston University
 Spring 2026
