@@ -1,78 +1,42 @@
 
-<h1 align="center">
-  <br>
-  <a href="https://www.bu.edu/spark/" target="_blank"><img src="https://www.bu.edu/spark/files/2023/08/logo.png" alt="BUSpark" width="200"></a>
-  <br>
-  Project README Template <change to project name>
-  <br>
-</h1>
+# MuckRock Patient Safety — Dang Dinh (dddinh)
 
-<h4 align="center">A template for the project readme file. </h4> <change to repo short description>
+## Branch Overview
+This branch contains data cleaning, merging, and exploratory data analysis 
+for the FDA MAUDE complaint dataset and recall dataset.
 
-<p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#project-description">Project Description</a> •
-  <a href="#data-locations">Data Locations</a>
-</p>
+## Notebooks
 
-## Key Features
-In this section you will be including a list of key features of your code/project.
+### 1. `foi_and_device_merge.ipynb`
+- Loads and combines raw FOI complaint files (2015–2025)
+- Concatenates multiple FOI_TEXT entries per MDR_REPORT_KEY
+- Merges complaint dataset with FDA device catalog
+- Reduces 46M raw entries to 19.2M unique complaint records
+- Exports final merged dataset: `merged_foi_device.csv`
 
-You should also include a short description of what each part of your code does. (Detailed description in the readme of each directory, if applicable)
-* /path/to/directory - function and description
-  - Key notes
-* /path/to/script - function and description
-  - Key notes
-* Lorem Ipsum - Dolor Sit Amet
-  - Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-* Duis Aute Irure Dolor
-  - Excepteur sint occaecat
-* Excepteur Sint Occaecat
-  - Curabitur efficitur, nunc non ultricies gravida, felis purus posuere eros, sed faucibus sapien est nec quam. Nulla at nisl nisl.
- 
-## How To Use
+### 2. `complaint_eda.ipynb`
+- EDA on merged complaint + device dataset
+- Complaint volume trends by year and month
+- Top complained devices, brands, and manufacturers
+- Device category analysis and complaint heatmap
+- ALARIS infusion pump 2022 spike investigation
 
-To clone and run this application, you'll need <a href="https://git-scm.com" target="_blank">Git</a>
-From your command line:
+### 3. `complaint_recalled_eda.ipynb`
+- Joint analysis of complaint and recall datasets
+- Complaint vs recall trend comparison (2015–2025)
+- Correlation analysis between complaints and recalls
+- Time lag analysis between first complaint and first recall
+- Infusion pump FRN deep dive
 
-```bash
-# Clone this repository
-$ git clone [repo link]
+## Outputs
+`/graphs` — Contains all generated visualizations from EDA notebooks
 
-# Further Instructions
-...
+
+## Requirements
 ```
-
-Create a new branch from dev, add changes on the new branch you just created.
-
-You will want to look into <a href="https://git-scm.com/docs/git-branch" target="_blank">git branch</a> and <a href="https://git-scm.com/docs/git-checkout" target="_blank">git checkout</a>
-
-```bash
-# Create and Checkout a new branch if it doesn't exist
-$ git checkout -b your-branch main
-...
+pandas
+matplotlib
+seaborn
+scikit-learn
+jupyter
 ```
-
-Open a Pull Request to dev. Add your PM and TPM as reviewers. 
-
-At the end of the semester during project wrap up open a final Pull Request to main from dev branch.
- 
-## Project Description
-
-In this section, you should include the project description, either from the client or spark.
-
-Please make sure it reflects what you see on the documents (project description) you recieved.
-
-* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec vel nunc at libero ultrices tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ut ligula nec risus posuere ultricies at et ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-* Veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## Data locations
-
-In this section, you should include the location of all of your datasets for the project (if applicable)
-
-<a href="dataset-documentation">Dataset Documentation</a>
-* Location 1: [location]
-  - [description]
-* Location 2: [location]
-  - [description]
